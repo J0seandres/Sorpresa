@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nuestra Historia</title>
+  <link rel="stylesheet" href="nosotros.css">
+</head>
+<body>
+  <audio id="background-music" autoplay loop muted>
+    <source src="levitate-audio.mp3" type="audio/mpeg">
+    Tu navegador no soporta el elemento de audio.
+  </audio>
+  <main class="page">
+    <section class="hero">
+      <h1>nuestra historia</h1>
+      <p class="subtitle">Una historia llena de recuerdos y muchas aventuras por completar <strong></strong>.</p>
+      <button id="play-music" class="music-button">Nosotros</button>
+    </section>
+
+    <section class="slider-wrapper">
+      <div class="slider">
+        <div class="track">
+          <div class="slide"><img src="amor/27d1da00-6228-407b-931a-09cbe988ab41.JPEG" alt="Foto 1"></div>
+          <div class="slide"><img src="amor/IMG_0082.JPEG" alt="Foto 2"></div>
+          <div class="slide"><img src="amor/IMG_0397.JPEG" alt="Foto 3"></div>
+          <div class="slide"><img src="amor/IMG_0590.JPEG" alt="Foto 4"></div>
+          <div class="slide"><img src="amor/IMG_0637.JPEG" alt="Foto 5"></div>
+          <div class="slide"><img src="amor/IMG_0882.JPEG" alt="Foto 6"></div>
+          <div class="slide"><img src="amor/IMG_0888.JPEG" alt="Foto 7"></div>
+          <div class="slide"><img src="amor/IMG_0923.JPEG" alt="Foto 8"></div>
+          <div class="slide"><img src="amor/IMG_0942.JPEG" alt="Foto 9"></div>
+          <div class="slide"><img src="amor/IMG_0983.JPEG" alt="Foto 10"></div>
+          <div class="slide"><img src="amor/IMG_1919.JPEG" alt="Foto 11"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="story">
+      <h2>nuestra historia</h2>
+      <p>Aqui es donde empezo todo aun recuerdo el primer dia que ta vi sentada observandome desde el momento uno esos ojos me cautivaron
+        esos ojos color miel esos ojos que me mataron 
+        NO TIENES IDEA LO EMOCIONADO QUE LLEGUE ESE DIA A CASA Dije REAAAAAAL HABLE CON MI NOVIECITAAAAAA LE PEDI EL INSTA 
+        UFFFFFFFF AUN NO SUPERO ESE DIA 
+         aqui empiezo a contarte lo loquito que estoy por ti no tienes idea lo mucho que me facinas 
+        Amoo tu compañia me da una paz estar conectados solo tu y yo yo y tu .
+      a veces podemos ser un poco tercos o aferrados pero al final del dia siempre te escogere a ti.
+      </p>
+    <p>Hay millones de personas en el mundo,
+        miles de ciudades y de calles,
+        y sin embargo, mis pasos y los tuyos
+        decidieron encontrarse en el mismo instante.
+        No es suerte, es que mi alma ya te buscaba.
+    </p>
+<p>Desde el primer momento en que te vi, supe que había algo especial entre nosotros. No fue solo tu sonrisa o tus ojos, sino esa conexión inexplicable 
+  que sentí en lo más profundo de mi ser. Cada vez que estamos juntos, el mundo parece detenerse y todo lo demás pierde importancia. Eres mi refugio,
+   mi alegría y mi inspiración TE ADMIRO DEMASIADO NO HAY DIA EN EL QUE PIENSE EN TI ERES MI PENSMIENTO CADA QUE DESPIERTO
+   Y CADA QUE DUERMO . No importa lo que la vida nos separe, siempre estaré a tu lado, amándote y apoyándote en cada paso del camino.</p> 
+   <P>Gracias por ser parte de mi vida y por hacerla tan maravillosa. Eres mi princesa, mi compañera y mi mejor amiga. Te amo con todo mi corazón, hoy y siempre.</P>
+   <p\\>con amor joss</p> </section>
+  </main>
+  <script>
+    const audio = document.getElementById('background-music');
+    const button = document.getElementById('play-music');
+
+    button.addEventListener('click', () => {
+      audio.muted = false;
+      audio.volume = 0.75;
+      audio.play().catch(() => {
+        alert('Haz clic de nuevo o revisa que el archivo levitate-audio.mp3 exista en la carpeta.');
+      });
+      button.textContent = 'Música activada';
+      button.disabled = true;
+    });
+  </script>
+</body>
+</html>
