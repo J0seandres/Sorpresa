@@ -74,7 +74,8 @@ body {
 .track {
   display: flex;
   height: 100%;
-  animation: slide 33s linear infinite;
+  /* Animation updated for seamless loop with duplicated slides */
+  animation: slide-desktop 66s linear infinite;
 }
 
 .slide {
@@ -122,11 +123,73 @@ body {
   font-size: clamp(1rem, 1.05vw, 1.08rem);
 }
 
-@keyframes slide {
-  0% {
-    transform: translateX(0%);
+@keyframes slide-desktop {
+  from {
+    transform: translateX(0);
   }
-  100% {
-    transform: translateX(-90.909%);
+  to {
+    /* Move by the width of the original 11 slides (11 * 20% = 220%) */
+    transform: translateX(-220%);
+  }
+}
+
+@keyframes slide-tablet {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    /* 11 slides * 33.333% = ~366.67% */
+    transform: translateX(-366.67%);
+  }
+}
+
+@keyframes slide-mobile {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    /* 11 slides * 50% = 550% */
+    transform: translateX(-550%);
+  }
+}
+
+/* --- Responsive Adjustments --- */
+
+@media (max-width: 1024px) {
+  .slider-wrapper {
+    height: 55vh;
+  }
+
+  .slide {
+    flex: 0 0 33.333%; /* 3 slides visible */
+  }
+
+  .track {
+    animation-name: slide-tablet;
+  }
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding: 16px;
+  }
+
+  .slider-wrapper {
+    height: 45vh;
+    border-radius: 18px;
+  }
+
+  .slide {
+    flex: 0 0 50%; /* 2 slides visible */
+  }
+
+  .track {
+    animation-name: slide-mobile;
+    animation-duration: 80s; /* Adjust speed for fewer slides */
+  }
+
+  .story {
+    margin-top: 24px;
+    padding: 16px;
   }
 }
